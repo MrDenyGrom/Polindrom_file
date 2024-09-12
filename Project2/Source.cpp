@@ -11,12 +11,12 @@ void printFile(string& filename);
 
 string createFile() {
 	string filename;
-	cout << "Ââåäèòå èìÿ ôàéëà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
 	cin >> filename;
 	ofstream file(filename);
 	if (file.is_open()) {
-		cout << "Ôàéë " << filename << " óñïåøíî ñîçäàí." << endl;
-		cout << "Ââåäèòå ñòðîêè äëÿ çàïèñè â ôàéë (ââåäèòå ïóñòóþ ñòðîêó äëÿ çàâåðøåíèÿ):" << endl;
+		cout << "Ð¤Ð°Ð¹Ð» " << filename << " ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ð·Ð´Ð°Ð½." << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð² Ñ„Ð°Ð¹Ð» (Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÑƒÑÑ‚ÑƒÑŽ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð´Ð»Ñ Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð¸Ñ):" << endl;
 			string line;
 		cin.ignore();
 		while (true) {
@@ -29,7 +29,7 @@ string createFile() {
 		return filename;
 	}
 	else {
-		cout << "Îøèáêà ïðè ñîçäàíèè ôàéëà." << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð°." << endl;
 		return "";
 	}
 }
@@ -85,11 +85,11 @@ void processFile(string& inputFilename, string& outputFilename) {
 			}
 			inputFile.close();
 			outputFile.close();
-			cout << "Ôàéë óñïåøíî îáðàáîòàí. Ðåçóëüòàò çàïèñàí â " << outputFilename <<
+			cout << "Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½. Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½ Ð² " << outputFilename <<
 				endl;
 		}
 		else {
-			cout << "Îøèáêà ïðè îòêðûòèè ôàéëîâ." << endl;
+			cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð¾Ð²." << endl;
 		}
 }
 void printFile(string& filename) {
@@ -102,34 +102,34 @@ void printFile(string& filename) {
 		file.close();
 	}
 	else {
-		cout << "Îøèáêà ïðè îòêðûòèè ôàéëà " << filename << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° " << filename << endl;
 	}
 }
 int main() {
 	setlocale(LC_ALL, "Russian");
 	string inputFilename, outputFilename;
-	cout << "Ââåäèòå èìÿ âõîäíîãî ôàéëà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°: ";
 	cin >> inputFilename;
 		if (!fileExists(inputFilename)) {
-			cout << "Âõîäíîé ôàéë íå íàéäåí. Ñîçäàòü íîâûé ôàéë? (y/n): ";
+			cout << "Ð’Ñ…Ð¾Ð´Ð½Ð¾Ð¹ Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½. Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð½Ð¾Ð²Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»? (y/n): ";
 			char answer;
 			cin >> answer;
 			if (tolower(answer) == 'y') {
 				inputFilename = createFile();
 				if (inputFilename.empty()) {
-					cout << "Ïîïðîáóéòå çàíàâî(\n" << endl;
+					cout << "ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ð·Ð°Ð½Ð°Ð²Ð¾(\n" << endl;
 					main();
 				}
 			}
 			else {
-				cout << "Ïîïðîáóéòå åù¸!\n" << endl;
+				cout << "ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÐµÑ‰Ñ‘!\n" << endl;
 				main();
 			}
 		}
-	cout << "Ââåäèòå èìÿ âûõîäíîãî ôàéëà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°: ";
 	cin >> outputFilename;
 	processFile(inputFilename, outputFilename);
-	cout << "Ñîäåðæèìîå âûõîäíîãî ôàéëà:" << endl;
+	cout << "Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ð²Ñ‹Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°:" << endl;
 	printFile(outputFilename);
 	return 0;
 }
